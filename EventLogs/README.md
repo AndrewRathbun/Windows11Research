@@ -3,5 +3,5 @@
 Run the following command in PowerShell (Admin):
 
 ```PowerShell
-(Get-WinEvent -ListLog *) | Select-Object -Property * | Export-Csv -path test.csv -NoTypeInformation
+(Get-WinEvent -ListLog *) | Select-Object -Property * | Export-Csv -path Windows11Events.csv -NoTypeInformation
 ```
