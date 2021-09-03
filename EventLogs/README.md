@@ -31,4 +31,4 @@ Run the following command in PowerShell (Admin):
  Get-WinEvent -LogName * | Select-Object -Property ProviderName, Id, Message | Export-Csv Windows11EventsProviderIDDescription.csv -NoTypeInformation
 ```
 
-*awaiting test to complete*
+This will provide a CSV of all the events logged on your system with the messages for your events, not the generic messages that Windows personalizes. 
