@@ -1,0 +1,77 @@
+An account was successfully logged on.Subject:
+Security ID:
+
+{SubjectUserSid}
+Account Name:
+
+{SubjectUserName}
+Account Domain:
+
+{SubjectDomainName}
+Logon ID:
+
+{SubjectLogonId}Logon Information:
+Logon Type:
+
+{LogonType}
+Restricted Admin Mode:
+{SubjectUserName}2
+Virtual Account:
+
+{SubjectUserName}5
+Elevated Token:
+
+{SubjectUserName}7Impersonation Level:
+
+{SubjectUserName}1New Logon:
+Security ID:
+
+{TargetUserSid}
+Account Name:
+
+{TargetUserName}
+Account Domain:
+
+{TargetDomainName}
+Logon ID:
+
+{TargetLogonId}
+Linked Logon ID:
+
+{SubjectUserName}6
+Network Account Name:
+{SubjectUserName}3
+Network Account Domain:
+{SubjectUserName}4
+Logon GUID:
+
+{SubjectUserSid}3Process Information:
+Process ID:
+
+{SubjectUserSid}7
+Process Name:
+
+{SubjectUserSid}8Network Information:
+Workstation Name:
+{SubjectUserSid}2
+Source Network Address:
+{SubjectUserSid}9
+Source Port:
+
+{SubjectUserName}0Detailed Authentication Information:
+Logon Process:
+
+{SubjectUserSid}0
+Authentication Package:
+{SubjectUserSid}1
+Transited Services:
+{SubjectUserSid}4
+Package Name (NTLM only):
+{SubjectUserSid}5
+Key Length:
+
+{SubjectUserSid}6This event is generated when a logon session is created. It is generated on the computer that was accessed.The subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as the Server service; or a local process such as Winlogon.exe or Services.exe.The logon type field indicates the kind of logon that occurred. The most common types are 2 (interactive) and 3 (network).The New Logon fields indicate the account for whom the new logon was created; i.e. the account that was logged on.The network fields indicate where a remote logon request originated. Workstation name is not always available and may be left blank in some cases.The impersonation level field indicates the extent to which a process in the logon session can impersonate.The authentication information fields provide detailed information about this specific logon request.
+- Logon GUID is a unique identifier that can be used to correlate this event with a KDC event.
+- Transited services indicate which intermediate services have participated in this logon request.
+- Package name indicates which sub-protocol was used among the NTLM protocols.
+- Key length indicates the length of the generated session key. This will be 0 if no session key was requested.

@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <title>Report: Windows10Pro22H24624.txt&nbsp;&vert;&nbsp;Windows11Pro22H24624.txt</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        font-size: .75em;
+      }
+      table.uc {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border: 1px solid #999EA2;
+      }
+      table.uc th {
+        padding: .45em .5em .45em 0;
+        vertical-align: text-top;
+        font-size: 1.2em;
+        font-weight: bold;
+        text-align: left;
+        color: #2d3740;
+        background-color: #F4F4F4;
+        border-bottom: 1px solid #999EA2;
+      }
+      table.uc th.filename {
+        padding-left: .3em;
+      }
+      table.uc td {
+        padding: .2em 0 .2em .4em;
+        vertical-align: text-top;
+        color: #595F62;
+        font-family: "Consolas", "Lucida Console", Monaco, monospace;
+        font-size: 1em;
+      }
+      table.uc td.data {
+        word-break: break-all;
+      }
+      table.uc td.diff {
+        color: #000000;
+        background-color: #ddebff;
+      }
+      table.uc td.missing_line {
+        background: repeating-linear-gradient(
+        to right,
+        white,
+        white 9px,
+        #CED6D9 1px,
+        #CED6D9 10px
+        );
+      }
+      table.uc td.ln {
+        background: #F4F4F4;
+        padding: 0 .5em;
+      }
+      table.uc td.symbol {
+        text-align: center;
+        background: #F4F4F4;
+        padding: 0 .3em 0 0;
+      }
+      .text_diff {
+        color: #E10000;
+      }
+      table.summary {
+        margin: 0 0 .75em 0;
+        padding: 0;
+      }
+      table.summary td {
+        padding: 0 1em;
+      }
+      table.summary td.summary_value {
+        border-right: 1px solid #B0BABF;
+      }
+      table.summary td.summary_label {
+        font-weight: bold;
+        padding: 0;
+      }
+      table.summary td:last-of-type {
+        border-right: 0;
+      }
+      #spacestabs_toggle {
+        float: right;
+      }
+    </style>
+    <script>
+      toggled = false;
+      function toggle_spaces_tabs(tab_val) {
+        var tab_replacer = "&raquo;";
+        var tab_restorer = "&emsp;"
+        for (i = 1; i < tab_val; i++) {
+          tab_replacer += "&nbsp;";
+          tab_restorer += "&emsp;";
+        }
+        tab_replace = toggled ? tab_restorer : tab_replacer;
+        sp_char = toggled ? "&nbsp;" : "&middot";
+        var re_tab = (toggled) ? new RegExp("»(?:&nbsp;){" + (tab_val - 1) +"}", "g") : new RegExp("(?:\u2003){" + tab_val +"}", "g");
+        var re_spc = (toggled) ? new RegExp("·", "g") : new RegExp("&nbsp;", "g");
+        var elems = document.getElementsByClassName("data"), i;
+        for (i = 0; i < elems.length; i++) {
+          if (elems[i].childNodes.length) {
+            elems[i].innerHTML = elems[i].innerHTML.replace(re_spc, sp_char);
+            elems[i].innerHTML = elems[i].innerHTML.replace(re_tab, tab_replace);
+          }
+        }
+        toggled = toggled ? false : true;
+      }
+    </script>
+  </head>
+  <body>
+    <div id="spacestabs_toggle">
+      <input type="checkbox" id="spacestabs" name="spacestabs" onclick="toggle_spaces_tabs(2);"/>
+      <label for="spacestabs">Show spaces / tabs</label>
+    </div>
+    <table class="summary" cellspacing=0 cellpadding=0>
+      <tr>
+        <td class="summary_label">Left file:</td>
+        <td class="summary_value">D:\Windows11Research\EventLogs\4624\Windows10Pro22H24624.txt</td>
+      </tr>
+      <tr>
+        <td class="summary_label">Right file:</td>
+        <td class="summary_value">D:\Windows11Research\EventLogs\4624\Windows11Pro22H24624.txt</td>
+      </tr>
+    </table>
+    <table class="summary" cellspacing=0 cellpadding=0>
+      <tr>
+        <td class="summary_label">Report type:</td>
+        <td class="summary_value">All (Matching and Differences)</td>
+      </tr>
+    </table>
+    <table class="summary" cellspacing=0 cellpadding=0>
+      <tr>
+        <td class="summary_label">Summary:</td>
+        <td class="summary_value">72 Line(s) match   </td>
+        <td class="summary_value">6 Block(s) diff   </td>
+        <td class="summary_value">5 : 7 Line(s) diff      </tr>
+    </table>
+    <table class="summary" cellspacing=0 cellpadding=0>
+      <tr>
+        <td class="summary_label">Ignore options:</td>
+        <td class="summary_value">Ignore line terminators</td>
+      </tr>
+    </table>
+    <table class="uc" cellspacing=0 cellpadding=0>
+      <tr>
+        <th></th>
+        <th></th>
+        <th class="filename">D:\Windows11Research\EventLogs\4624\Windows10Pro22H24624.txt</th>
+        <th></th>
+        <th></th>
+        <th class="filename">D:\Windows11Research\EventLogs\4624\Windows11Pro22H24624.txt</th>
+      </tr>
+      <tr>
+        <td class="ln">1</td>
+        <td class="symbol"></td>
+        <td class="data">An&nbsp;account&nbsp;was&nbsp;successfully&nbsp;logged&nbsp;on.Subject:</td>
+        <td class="separ"></td>
+        <td class="ln">1</td>
+        <td class="data">An&nbsp;account&nbsp;was&nbsp;successfully&nbsp;logged&nbsp;on.Subject:</td>
+      </tr>
+      <tr>
+        <td class="ln">2</td>
+        <td class="symbol"></td>
+        <td class="data">Security&nbsp;ID:</td>
+        <td class="separ"></td>
+        <td class="ln">2</td>
+        <td class="data">Security&nbsp;ID:</td>
+      </tr>
+      <tr>
+        <td class="ln">3</td>
+        <td class="symbol"></td>
+        <td class="data"></td>
+        <td class="separ"></td>
+        <td class="ln">3</td>
+        <td class="data"></td>
+      </tr>
+      <tr>
+        <td class="ln">4</td>
+        <td class="symbol"></td>
+        <td class="data">{SubjectUserSid}</td>
+        <td class="separ"></td>
+        <td class="ln">4</td>
+        <td class="data">{SubjectUserSid}</td>
+      </tr>
+      <tr>
+        <td class="ln">5</td>
+        <td class="symbol"></td>
+        <td class="data">Account&nbsp;Name:</td>
+        <td class="separ"></td>
+        <td class="ln">5</td>
+        <td class="data">Account&nbsp;Name:</td>
+      </tr>
+      <tr>
+        <td class="ln">6</td>
+        <td class="symbol"></td>
+        <td class="data"></td>
+        <td class="separ"></td>
+        <td class="ln">6</td>
+        <td class="data"></td>
+      </tr>
+      <tr>
+        <td class="ln">7</td>
+        <td class="symbol"></td>
+        <td class="data">{SubjectUserName}</td>
+        <td class="separ"></td>
+        <td class="ln">7</td>
+        <td class="data">{SubjectUserName}</td>
+      </tr>
+      <tr>
+        <td class="ln">8</td>
+        <td class="symbol"></td>
+        <td class="data">Account&nbsp;Domain:</td>
+        <td class="separ"></td>
+        <td class="ln">8</td>
+        <td class="data">Account&nbsp;Domain:</td>
+      </tr>
+      <tr>
+        <td class="ln">9</td>
+        <td class="symbol"></td>
+        <td class="data"></td>
+        <td class="separ"></td>
+        <td class="ln">9</td>
+        <td class="data"></td>
+      </tr>
+      <tr>
+        <td class="ln">10</td>
+        <td class="symbol"></td>
+        <td class="data">{SubjectDomainName}</td>
+        <td class="separ"></td>
+        <td class="ln">10</td>
+        <td class="data">{SubjectDomainName}</td>
+      </tr>
+      <tr>
+        <td class="ln">11</td>
+        <td class="symbol"></td>
+        <td class="data">Logon&nbsp;ID:</td>
+        <td class="separ"></td>
+        <td class="ln">11</td>
+        <td class="data">Logon&nbsp;ID:</td>
+      </tr>
+      <tr>
+        <td class="ln">12</td>
+        <td class="symbol"></td>
+        <td class="data"></td>
+        <td class="separ"></td>
+        <td class="ln">12</td>
+        <td class="data"></td>
+      </tr>
+      <tr>
+        <td class="ln">13</td>
+        <td class="symbol"></td>
+        <td class="data">{SubjectLogonId}Logon&nbsp;Information:</td>
+        <td class="separ"></td>
+        <td class="ln">13</td>
+        <td class="data">{SubjectLogonId}Logon&nbsp;Information:</td>
+      </tr>
+      <tr>
+        <td class="ln">14</td>
+        <td class="symbol"></td>
+        <td class="data">Logon&nbsp;Type:</td>
+        <td class="separ"></td>
+        <td class="ln">14</td>
+        <td class="data">Logon&nbsp;Type:</td>
+      </tr>
+      <tr>
+        <td class="ln">15</td>
+        <td class="symbol"></td>
+        <td class="data"></td>
+        <td class="separ"></td>
+        <td class="ln">15</td>
+        <td class="data"></td>
+      </tr>
+      <tr>
+        <td class="ln">16</td>
+        <td class="symbol"></td>
+        <td class="data">{LogonType}</td>
+        <td class="separ"></td>
+        <td class="ln">16</td>
+        <td class="data">{LogonType}</td>
+      </tr>
+      <tr>
+        <td class="ln">17</td>
+        <td class="symbol"></td>
+        <td class="data">Restricted&nbsp;Admin&nbsp;Mode:</td>
+        <td class="separ"></td>
+        <td class="ln">17</td>
+        <td class="data">Restricted&nbsp;Admin&nbsp;Mode:</td>
+      </tr>
+      <tr>
+        <td class="ln">18</td>
+        <td class="symbol"></td>
+        <td class="data">{SubjectUserName}2</td>
+        <td class="separ"></td>
+        <td class="ln">18</td>
+        <td class="data">{SubjectUserName}2</td>
+      </tr>
+      <tr>
+        <td class="ln"></td>
+        <td class="symbol">!&gt;</td>
+        <td class="data missing_line"></td>
+        <td class="separ"></td>
+        <td class="ln">19</td>
+        <td class="data diff"><span class="text_diff">Remote&nbsp;Credential&nbsp;Guard:</span></td>
+      </tr>
+      <tr>
+        <td class="ln"></td>
+        <td class="symbol">!&gt;</td>
+        <td class="data missing_line"></td>
+        <td class="separ"></td>
+        <td class="ln">20</td>
+        <td class="data diff"><span class="text_diff">{SubjectUserName}3</span></td>
+      </tr>
+      <tr>
+        <td class="ln">19</td>
+        <td class="symbol"></td>
+        <td class="data">Virtual&nbsp;Account:</td>
+        <td class="separ"></td>
+        <td class="ln">21</td>
+        <td class="data">Virtual&nbsp;Account:</td>
+      </tr>
+      <tr>
+        <td class="ln">20</td>
+        <td class="symbol"></td>
+        <td class="data"></td>
+        <td class="separ"></td>
+        <td class="ln">22</td>
+        <td class="data"></td>
+      </tr>
+      <tr>
+        <td class="ln">21</td>
+        <td class="symbol">*</td>
+        <td class="data diff">{SubjectUserName}<span class="text_diff">5</span></td>
+        <td class="separ"></td>
+        <td class="ln">23</td>
+        <td class="data diff">{SubjectUserName}<span class="text_diff">6</span></td>
+      </tr>
+      <tr>
+        <td class="ln">22</td>
+        <td class="symbol"></td>
+        <td class="data">Elevated&nbsp;Token:</td>
+        <td class="separ"></td>
+        <td class="ln">24</td>
+        <td class="data">Elevated&nbsp;Token:</td>
+      </tr>
+      <tr>
+        <td class="ln">23</td>
+        <td class="symbol"></td>
+        <td class="data"></td>
+        <td class="separ"></td>
+        <td class="ln">25</td>
+        <td class="data"></td>
+      </tr>
+      <tr>
+        <td class="ln">24</td>
+        <td class="symbol">*</td>
+        <td class="data diff">{SubjectUserName}<span class="text_diff">7Impersonation</span>&nbsp;Level:</td>
+        <td class="separ"></td>
+        <td class="ln">26</td>
+        <td class="data diff">{SubjectUserName}<span class="text_diff">8Impersonation</span>&nbsp;Level:</td>
+      </tr>
+      <tr>
+        <td class="ln">25</td>
+        <td class="symbol"></td>
+        <td class="data"></td>
+        <td class="separ"></td>
+        <td class="ln">27</td>
+        <td class="data"></td>
+      </tr>
+      <tr>
+        <td class="ln">26</td>
+        <td class="symbol"></td>
+        <td class="data">{SubjectUserName}1New&nbsp;Logon:</td>
+        <td class="separ"></td>
+        <td class="ln">28</td>
+        <td class="data">{SubjectUserName}1New&nbsp;Logon:</td>
+      </tr>
+      <tr>
+        <td class="ln">27</td>
+        <td class="symbol"></td>
+        <td class="data">Security&nbsp;ID:</td>
+        <td class="separ"></td>
+        <td class="ln">29</td>
+        <td class="data">Security&nbsp;ID:</td>
+      </tr>
+      <tr>
+        <td class="ln">28</td>
+        <td class="symbol"></td>
+        <td class="data"></td>
+        <td class="separ"></td>
+        <td class="ln">30</td>
+        <td class="data"></td>
+      </tr>
+      <tr>
+        <td class="ln">29</td>
+        <td class="symbol"></td>
+        <td class="data">{TargetUserSid}</td>
+        <td class="separ"></td>
+        <td class="ln">31</td>
+        <td class="data">{TargetUserSid}</td>
+      </tr>
+      <tr>
+        <td class="ln">30</td>
+        <td class="symbol"></td>
+        <td class="data">Account&nbsp;Name:</td>
+        <td class="separ"></td>
+        <td class="ln">32</td>
+        <td class="data">Account&nbsp;Name:</td>
+      </tr>
+      <tr>
+        <td class="ln">31</td>
+        <td class="symbol"></td>
+        <td class="data"></td>
+        <td class="separ"></td>
+        <td class="ln">33</td>
+        <td class="data"></td>
+      </tr>
+      <tr>
+        <td class="ln">32</td>
+        <td class="symbol"></td>
+        <td class="data">{TargetUserName}</td>
+        <td class="separ"></td>
+        <td class="ln">34</td>
+        <td class="data">{TargetUserName}</td>
+      </tr>
+      <tr>
+        <td class="ln">33</td>
+        <td class="symbol"></td>
+        <td class="data">Account&nbsp;Domain:</td>
+        <td class="separ"></td>
+        <td class="ln">35</td>
+        <td class="data">Account&nbsp;Domain:</td>
+      </tr>
+      <tr>
+        <td class="ln">34</td>
+        <td class="symbol"></td>
+        <td class="data"></td>
+        <td class="separ"></td>
+        <td class="ln">36</td>
+        <td class="data"></td>
+      </tr>
+      <tr>
+        <td class="ln">35</td>
+        <td class="symbol"></td>
+        <td class="data">{TargetDomainName}</td>
+        <td class="separ"></td>
+        <td class="ln">37</td>
+        <td class="data">{TargetDomainName}</td>
+      </tr>
+      <tr>
+        <td class="ln">36</td>
+        <td class="symbol"></td>
+        <td class="data">Logon&nbsp;ID:</td>
+        <td class="separ"></td>
+        <td class="ln">38</td>
+        <td class="data">Logon&nbsp;ID:</td>
+      </tr>
+      <tr>
+        <td class="ln">37</td>
+        <td class="symbol"></td>
+        <td class="data"></td>
+        <td class="separ"></td>
+        <td class="ln">39</td>
+        <td class="data"></td>
+      </tr>
+      <tr>
+        <td class="ln">38</td>
+        <td class="symbol"></td>
+        <td class="data">{TargetLogonId}</td>
+        <td class="separ"></td>
+        <td class="ln">40</td>
+        <td class="data">{TargetLogonId}</td>
+      </tr>
+      <tr>
+        <td class="ln">39</td>
+        <td class="symbol"></td>
+        <td class="data">Linked&nbsp;Logon&nbsp;ID:</td>
+        <td class="separ"></td>
+        <td class="ln">41</td>
+        <td class="data">Linked&nbsp;Logon&nbsp;ID:</td>
+      </tr>
+      <tr>
+        <td class="ln">40</td>
+        <td class="symbol"></td>
+        <td class="data"></td>
+        <td class="separ"></td>
+        <td class="ln">42</td>
+        <td class="data"></td>
+      </tr>
+      <tr>
+        <td class="ln">41</td>
+        <td class="symbol">*</td>
+        <td class="data diff">{SubjectUserName}<span class="text_diff">6</span></td>
+        <td class="separ"></td>
+        <td class="ln">43</td>
+        <td class="data diff">{SubjectUserName}<span class="text_diff">7</span></td>
+      </tr>
+      <tr>
+        <td class="ln">42</td>
+        <td class="symbol"></td>
+        <td class="data">Network&nbsp;Account&nbsp;Name:</td>
+        <td class="separ"></td>
+        <td class="ln">44</td>
+        <td class="data">Network&nbsp;Account&nbsp;Name:</td>
+      </tr>
+      <tr>
+        <td class="ln">43</td>
+        <td class="symbol">&lt;!</td>
+        <td class="data diff"><span class="text_diff">{SubjectUserName}3</span></td>
+        <td class="separ"></td>
+        <td class="ln"></td>
+        <td class="data missing_line"></td>
+      </tr>
+      <tr>
+        <td class="ln">44</td>
+        <td class="symbol">&lt;!</td>
+        <td class="data diff"><span class="text_diff">Network&nbsp;Account&nbsp;Domain:</span></td>
+        <td class="separ"></td>
+        <td class="ln"></td>
+        <td class="data missing_line"></td>
+      </tr>
+      <tr>
+        <td class="ln">45</td>
+        <td class="symbol"></td>
+        <td class="data">{SubjectUserName}4</td>
+        <td class="separ"></td>
+        <td class="ln">45</td>
+        <td class="data">{SubjectUserName}4</td>
+      </tr>
+      <tr>
+        <td class="ln"></td>
+        <td class="symbol">!&gt;</td>
+        <td class="data missing_line"></td>
+        <td class="separ"></td>
+        <td class="ln">46</td>
+        <td class="data diff"><span class="text_diff">Network&nbsp;Account&nbsp;Domain:</span></td>
+      </tr>
+      <tr>
+        <td class="ln"></td>
+        <td class="symbol">!&gt;</td>
+        <td class="data missing_line"></td>
+        <td class="separ"></td>
+        <td class="ln">47</td>
+        <td class="data diff"><span class="text_diff">{SubjectUserName}5</span></td>
+      </tr>
+      <tr>
+        <td class="ln">46</td>
+        <td class="symbol"></td>
+        <td class="data">Logon&nbsp;GUID:</td>
+        <td class="separ"></td>
+        <td class="ln">48</td>
+        <td class="data">Logon&nbsp;GUID:</td>
+      </tr>
+      <tr>
+        <td class="ln">47</td>
+        <td class="symbol"></td>
+        <td class="data"></td>
+        <td class="separ"></td>
+        <td class="ln">49</td>
+        <td class="data"></td>
+      </tr>
+      <tr>
+        <td class="ln">48</td>
+        <td class="symbol"></td>
+        <td class="data">{SubjectUserSid}3Process&nbsp;Information:</td>
+        <td class="separ"></td>
+        <td class="ln">50</td>
+        <td class="data">{SubjectUserSid}3Process&nbsp;Information:</td>
+      </tr>
+      <tr>
+        <td class="ln">49</td>
+        <td class="symbol"></td>
+        <td class="data">Process&nbsp;ID:</td>
+        <td class="separ"></td>
+        <td class="ln">51</td>
+        <td class="data">Process&nbsp;ID:</td>
+      </tr>
+      <tr>
+        <td class="ln">50</td>
+        <td class="symbol"></td>
+        <td class="data"></td>
+        <td class="separ"></td>
+        <td class="ln">52</td>
+        <td class="data"></td>
+      </tr>
+      <tr>
+        <td class="ln">51</td>
+        <td class="symbol"></td>
+        <td class="data">{SubjectUserSid}7</td>
+        <td class="separ"></td>
+        <td class="ln">53</td>
+        <td class="data">{SubjectUserSid}7</td>
+      </tr>
+      <tr>
+        <td class="ln">52</td>
+        <td class="symbol"></td>
+        <td class="data">Process&nbsp;Name:</td>
+        <td class="separ"></td>
+        <td class="ln">54</td>
+        <td class="data">Process&nbsp;Name:</td>
+      </tr>
+      <tr>
+        <td class="ln">53</td>
+        <td class="symbol"></td>
+        <td class="data"></td>
+        <td class="separ"></td>
+        <td class="ln">55</td>
+        <td class="data"></td>
+      </tr>
+      <tr>
+        <td class="ln">54</td>
+        <td class="symbol"></td>
+        <td class="data">{SubjectUserSid}8Network&nbsp;Information:</td>
+        <td class="separ"></td>
+        <td class="ln">56</td>
+        <td class="data">{SubjectUserSid}8Network&nbsp;Information:</td>
+      </tr>
+      <tr>
+        <td class="ln">55</td>
+        <td class="symbol"></td>
+        <td class="data">Workstation&nbsp;Name:</td>
+        <td class="separ"></td>
+        <td class="ln">57</td>
+        <td class="data">Workstation&nbsp;Name:</td>
+      </tr>
+      <tr>
+        <td class="ln">56</td>
+        <td class="symbol"></td>
+        <td class="data">{SubjectUserSid}2</td>
+        <td class="separ"></td>
+        <td class="ln">58</td>
+        <td class="data">{SubjectUserSid}2</td>
+      </tr>
+      <tr>
+        <td class="ln">57</td>
+        <td class="symbol"></td>
+        <td class="data">Source&nbsp;Network&nbsp;Address:</td>
+        <td class="separ"></td>
+        <td class="ln">59</td>
+        <td class="data">Source&nbsp;Network&nbsp;Address:</td>
+      </tr>
+      <tr>
+        <td class="ln">58</td>
+        <td class="symbol"></td>
+        <td class="data">{SubjectUserSid}9</td>
+        <td class="separ"></td>
+        <td class="ln">60</td>
+        <td class="data">{SubjectUserSid}9</td>
+      </tr>
+      <tr>
+        <td class="ln">59</td>
+        <td class="symbol"></td>
+        <td class="data">Source&nbsp;Port:</td>
+        <td class="separ"></td>
+        <td class="ln">61</td>
+        <td class="data">Source&nbsp;Port:</td>
+      </tr>
+      <tr>
+        <td class="ln">60</td>
+        <td class="symbol"></td>
+        <td class="data"></td>
+        <td class="separ"></td>
+        <td class="ln">62</td>
+        <td class="data"></td>
+      </tr>
+      <tr>
+        <td class="ln">61</td>
+        <td class="symbol"></td>
+        <td class="data">{SubjectUserName}0Detailed&nbsp;Authentication&nbsp;Information:</td>
+        <td class="separ"></td>
+        <td class="ln">63</td>
+        <td class="data">{SubjectUserName}0Detailed&nbsp;Authentication&nbsp;Information:</td>
+      </tr>
+      <tr>
+        <td class="ln">62</td>
+        <td class="symbol"></td>
+        <td class="data">Logon&nbsp;Process:</td>
+        <td class="separ"></td>
+        <td class="ln">64</td>
+        <td class="data">Logon&nbsp;Process:</td>
+      </tr>
+      <tr>
+        <td class="ln">63</td>
+        <td class="symbol"></td>
+        <td class="data"></td>
+        <td class="separ"></td>
+        <td class="ln">65</td>
+        <td class="data"></td>
+      </tr>
+      <tr>
+        <td class="ln">64</td>
+        <td class="symbol"></td>
+        <td class="data">{SubjectUserSid}0</td>
+        <td class="separ"></td>
+        <td class="ln">66</td>
+        <td class="data">{SubjectUserSid}0</td>
+      </tr>
+      <tr>
+        <td class="ln">65</td>
+        <td class="symbol"></td>
+        <td class="data">Authentication&nbsp;Package:</td>
+        <td class="separ"></td>
+        <td class="ln">67</td>
+        <td class="data">Authentication&nbsp;Package:</td>
+      </tr>
+      <tr>
+        <td class="ln">66</td>
+        <td class="symbol"></td>
+        <td class="data">{SubjectUserSid}1</td>
+        <td class="separ"></td>
+        <td class="ln">68</td>
+        <td class="data">{SubjectUserSid}1</td>
+      </tr>
+      <tr>
+        <td class="ln">67</td>
+        <td class="symbol"></td>
+        <td class="data">Transited&nbsp;Services:</td>
+        <td class="separ"></td>
+        <td class="ln">69</td>
+        <td class="data">Transited&nbsp;Services:</td>
+      </tr>
+      <tr>
+        <td class="ln">68</td>
+        <td class="symbol"></td>
+        <td class="data">{SubjectUserSid}4</td>
+        <td class="separ"></td>
+        <td class="ln">70</td>
+        <td class="data">{SubjectUserSid}4</td>
+      </tr>
+      <tr>
+        <td class="ln">69</td>
+        <td class="symbol"></td>
+        <td class="data">Package&nbsp;Name&nbsp;(NTLM&nbsp;only):</td>
+        <td class="separ"></td>
+        <td class="ln">71</td>
+        <td class="data">Package&nbsp;Name&nbsp;(NTLM&nbsp;only):</td>
+      </tr>
+      <tr>
+        <td class="ln">70</td>
+        <td class="symbol"></td>
+        <td class="data">{SubjectUserSid}5</td>
+        <td class="separ"></td>
+        <td class="ln">72</td>
+        <td class="data">{SubjectUserSid}5</td>
+      </tr>
+      <tr>
+        <td class="ln">71</td>
+        <td class="symbol"></td>
+        <td class="data">Key&nbsp;Length:</td>
+        <td class="separ"></td>
+        <td class="ln">73</td>
+        <td class="data">Key&nbsp;Length:</td>
+      </tr>
+      <tr>
+        <td class="ln">72</td>
+        <td class="symbol"></td>
+        <td class="data"></td>
+        <td class="separ"></td>
+        <td class="ln">74</td>
+        <td class="data"></td>
+      </tr>
+      <tr>
+        <td class="ln">73</td>
+        <td class="symbol"></td>
+        <td class="data">{SubjectUserSid}6This&nbsp;event&nbsp;is&nbsp;generated&nbsp;when&nbsp;a&nbsp;logon&nbsp;session&nbsp;is&nbsp;created.&nbsp;It&nbsp;is&nbsp;generated&nbsp;on&nbsp;the&nbsp;computer&nbsp;that&nbsp;was&nbsp;accessed.The&nbsp;subject&nbsp;fields&nbsp;indicate&nbsp;the&nbsp;account&nbsp;on&nbsp;the&nbsp;local&nbsp;system&nbsp;which&nbsp;requested&nbsp;the&nbsp;logon.&nbsp;This&nbsp;is&nbsp;most&nbsp;commonly&nbsp;a&nbsp;service&nbsp;such&nbsp;as&nbsp;the&nbsp;Server&nbsp;service;&nbsp;or&nbsp;a&nbsp;local&nbsp;process&nbsp;such&nbsp;as&nbsp;Winlogon.exe&nbsp;or&nbsp;Services.exe.The&nbsp;logon&nbsp;type&nbsp;field&nbsp;indicates&nbsp;the&nbsp;kind&nbsp;of&nbsp;logon&nbsp;that&nbsp;occurred.&nbsp;The&nbsp;most&nbsp;common&nbsp;types&nbsp;are&nbsp;2&nbsp;(interactive)&nbsp;and&nbsp;3&nbsp;(network).The&nbsp;New&nbsp;Logon&nbsp;fields&nbsp;indicate&nbsp;the&nbsp;account&nbsp;for&nbsp;whom&nbsp;the&nbsp;new&nbsp;logon&nbsp;was&nbsp;created;&nbsp;i.e.&nbsp;the&nbsp;account&nbsp;that&nbsp;was&nbsp;logged&nbsp;on.The&nbsp;network&nbsp;fields&nbsp;indicate&nbsp;where&nbsp;a&nbsp;remote&nbsp;logon&nbsp;request&nbsp;originated.&nbsp;Workstation&nbsp;name&nbsp;is&nbsp;not&nbsp;always&nbsp;available&nbsp;and&nbsp;may&nbsp;be&nbsp;left&nbsp;blank&nbsp;in&nbsp;some&nbsp;cases.The&nbsp;impersonation&nbsp;level&nbsp;field&nbsp;indicates&nbsp;the&nbsp;extent&nbsp;to&nbsp;which&nbsp;a&nbsp;process&nbsp;in&nbsp;the&nbsp;logon&nbsp;session&nbsp;can&nbsp;impersonate.The&nbsp;authentication&nbsp;information&nbsp;fields&nbsp;provide&nbsp;detailed&nbsp;information&nbsp;about&nbsp;this&nbsp;specific&nbsp;logon&nbsp;request.</td>
+        <td class="separ"></td>
+        <td class="ln">75</td>
+        <td class="data">{SubjectUserSid}6This&nbsp;event&nbsp;is&nbsp;generated&nbsp;when&nbsp;a&nbsp;logon&nbsp;session&nbsp;is&nbsp;created.&nbsp;It&nbsp;is&nbsp;generated&nbsp;on&nbsp;the&nbsp;computer&nbsp;that&nbsp;was&nbsp;accessed.The&nbsp;subject&nbsp;fields&nbsp;indicate&nbsp;the&nbsp;account&nbsp;on&nbsp;the&nbsp;local&nbsp;system&nbsp;which&nbsp;requested&nbsp;the&nbsp;logon.&nbsp;This&nbsp;is&nbsp;most&nbsp;commonly&nbsp;a&nbsp;service&nbsp;such&nbsp;as&nbsp;the&nbsp;Server&nbsp;service;&nbsp;or&nbsp;a&nbsp;local&nbsp;process&nbsp;such&nbsp;as&nbsp;Winlogon.exe&nbsp;or&nbsp;Services.exe.The&nbsp;logon&nbsp;type&nbsp;field&nbsp;indicates&nbsp;the&nbsp;kind&nbsp;of&nbsp;logon&nbsp;that&nbsp;occurred.&nbsp;The&nbsp;most&nbsp;common&nbsp;types&nbsp;are&nbsp;2&nbsp;(interactive)&nbsp;and&nbsp;3&nbsp;(network).The&nbsp;New&nbsp;Logon&nbsp;fields&nbsp;indicate&nbsp;the&nbsp;account&nbsp;for&nbsp;whom&nbsp;the&nbsp;new&nbsp;logon&nbsp;was&nbsp;created;&nbsp;i.e.&nbsp;the&nbsp;account&nbsp;that&nbsp;was&nbsp;logged&nbsp;on.The&nbsp;network&nbsp;fields&nbsp;indicate&nbsp;where&nbsp;a&nbsp;remote&nbsp;logon&nbsp;request&nbsp;originated.&nbsp;Workstation&nbsp;name&nbsp;is&nbsp;not&nbsp;always&nbsp;available&nbsp;and&nbsp;may&nbsp;be&nbsp;left&nbsp;blank&nbsp;in&nbsp;some&nbsp;cases.The&nbsp;impersonation&nbsp;level&nbsp;field&nbsp;indicates&nbsp;the&nbsp;extent&nbsp;to&nbsp;which&nbsp;a&nbsp;process&nbsp;in&nbsp;the&nbsp;logon&nbsp;session&nbsp;can&nbsp;impersonate.The&nbsp;authentication&nbsp;information&nbsp;fields&nbsp;provide&nbsp;detailed&nbsp;information&nbsp;about&nbsp;this&nbsp;specific&nbsp;logon&nbsp;request.</td>
+      </tr>
+      <tr>
+        <td class="ln">74</td>
+        <td class="symbol"></td>
+        <td class="data">-&nbsp;Logon&nbsp;GUID&nbsp;is&nbsp;a&nbsp;unique&nbsp;identifier&nbsp;that&nbsp;can&nbsp;be&nbsp;used&nbsp;to&nbsp;correlate&nbsp;this&nbsp;event&nbsp;with&nbsp;a&nbsp;KDC&nbsp;event.</td>
+        <td class="separ"></td>
+        <td class="ln">76</td>
+        <td class="data">-&nbsp;Logon&nbsp;GUID&nbsp;is&nbsp;a&nbsp;unique&nbsp;identifier&nbsp;that&nbsp;can&nbsp;be&nbsp;used&nbsp;to&nbsp;correlate&nbsp;this&nbsp;event&nbsp;with&nbsp;a&nbsp;KDC&nbsp;event.</td>
+      </tr>
+      <tr>
+        <td class="ln">75</td>
+        <td class="symbol"></td>
+        <td class="data">-&nbsp;Transited&nbsp;services&nbsp;indicate&nbsp;which&nbsp;intermediate&nbsp;services&nbsp;have&nbsp;participated&nbsp;in&nbsp;this&nbsp;logon&nbsp;request.</td>
+        <td class="separ"></td>
+        <td class="ln">77</td>
+        <td class="data">-&nbsp;Transited&nbsp;services&nbsp;indicate&nbsp;which&nbsp;intermediate&nbsp;services&nbsp;have&nbsp;participated&nbsp;in&nbsp;this&nbsp;logon&nbsp;request.</td>
+      </tr>
+      <tr>
+        <td class="ln">76</td>
+        <td class="symbol"></td>
+        <td class="data">-&nbsp;Package&nbsp;name&nbsp;indicates&nbsp;which&nbsp;sub-protocol&nbsp;was&nbsp;used&nbsp;among&nbsp;the&nbsp;NTLM&nbsp;protocols.</td>
+        <td class="separ"></td>
+        <td class="ln">78</td>
+        <td class="data">-&nbsp;Package&nbsp;name&nbsp;indicates&nbsp;which&nbsp;sub-protocol&nbsp;was&nbsp;used&nbsp;among&nbsp;the&nbsp;NTLM&nbsp;protocols.</td>
+      </tr>
+      <tr>
+        <td class="ln">77</td>
+        <td class="symbol"></td>
+        <td class="data">-&nbsp;Key&nbsp;length&nbsp;indicates&nbsp;the&nbsp;length&nbsp;of&nbsp;the&nbsp;generated&nbsp;session&nbsp;key.&nbsp;This&nbsp;will&nbsp;be&nbsp;0&nbsp;if&nbsp;no&nbsp;session&nbsp;key&nbsp;was&nbsp;requested.</td>
+        <td class="separ"></td>
+        <td class="ln">79</td>
+        <td class="data">-&nbsp;Key&nbsp;length&nbsp;indicates&nbsp;the&nbsp;length&nbsp;of&nbsp;the&nbsp;generated&nbsp;session&nbsp;key.&nbsp;This&nbsp;will&nbsp;be&nbsp;0&nbsp;if&nbsp;no&nbsp;session&nbsp;key&nbsp;was&nbsp;requested.</td>
+      </tr>
+    </table>
+  </body>
+</html>
